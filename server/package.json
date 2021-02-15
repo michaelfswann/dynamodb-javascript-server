@@ -1,0 +1,31 @@
+{
+  "name": "cloud-resume-server",
+  "version": "1.0.0",
+  "description": "Restful API to update visitor counter stored on DynamoDB",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -r dotenv/config server.js",
+    "start": "node -r dotenv/config server.js",
+    "create-db": "node -r dotenv/config ./db/scripts/createCounterTable.js",
+    "delete-db": "node -r dotenv/config ./db/scripts/deleteCounterTable.js",
+    "load-data": "node -r dotenv/config ./db/scripts/populateCounterTable.js",
+    "read-data": "node -r dotenv/config ./db/scripts/readCounterTable.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/michaelfswann/cloud-resume-challenge"
+  },
+  "author": "michaelfswann",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.841.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
